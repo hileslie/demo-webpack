@@ -5,6 +5,8 @@ const htmlPlugin = new HtmlWebpackPlugin({
     filename: 'index.html', // 指定生成的文件名称(存在于内存中)
 })
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+
+const DemoPlugin = require('./plugins/demoPlugin')
 module.exports = {
     mode: 'development',
     entry: path.join(__dirname, './src/index.js'),
@@ -15,6 +17,7 @@ module.exports = {
     plugins: [
         htmlPlugin,
         new VueLoaderPlugin(),
+        new DemoPlugin(),
     ],
     module: {
         rules: [
