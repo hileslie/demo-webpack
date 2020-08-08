@@ -1,6 +1,6 @@
 import './css/index.css'
 import './css/index.less'
-import App from './components/App.vue'
+// import './css/index.scss'
 
 function test() {
     console.log('hi leslie~')
@@ -16,21 +16,22 @@ class Person {
 console.log(Person.name)
 console.log(Person.info)
 
-// import './css/index.scss'
-// import Vue from 'vue';
-// new Vue({
-//     el: '#block',
-//     data() {
-//         return{
-//             name: 'hi leslie~',
-//         }
-//     },
-//     created() {
-//         this.test()
-//     },
-//     methods: {
-//         test() {
-//             console.log('hi leslie~')
-//         }
-//     }
-// })
+import Vue from 'vue';
+import App from './components/App.vue'
+new Vue({
+    el: '#app',
+    render: h => h(App),
+    data() {
+        return{
+            name: 'vue hi leslie~',
+        }
+    },
+    created() {
+        this.test()
+    },
+    methods: {
+        test() {
+            console.log(this.name)
+        }
+    }
+})
