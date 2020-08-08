@@ -7,6 +7,7 @@ const htmlPlugin = new HtmlWebpackPlugin({
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const DemoPlugin = require('./plugins/demoPlugin')
+
 module.exports = {
     mode: 'development',
     entry: path.join(__dirname, './src/index.js'),
@@ -43,7 +44,11 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                use: ['babel-loader'],
+                use: [
+                    path.resolve('./loaders/flashback.js'),
+                    path.resolve('./loaders/capital.js'),
+                    'babel-loader'
+                ],
                 exclude: /node_modules/
             },
             {

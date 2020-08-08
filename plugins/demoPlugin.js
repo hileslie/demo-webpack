@@ -1,5 +1,3 @@
-const { compilation } = require("webpack")
-
 // webpack 启动后，在读取配置的过程中会先执行 new WebpackCleanupPlugin() 初始化一个 WebpackCleanupPlugin 获得其实例。
 // 在初始化 compiler 对象后，再调用 WebpackCleanupPlugin.apply(compiler) 给插件实例传入 compiler 对象。
 // 插件实例在获取到 compiler 对象后，就可以通过 compiler.plugin(事件名称, 回调函数) 监听到 Webpack 广播出来的事件。
@@ -30,8 +28,8 @@ class DemoPlugin {
             console.log('assets文件名: ', assets);
         })
 
-        compiler.plugin('emit', compilation => {
-        })
+        // compiler.plugin('emit', compilation => {
+        // })
     }
 }
 
