@@ -4,6 +4,7 @@ const htmlPlugin = new HtmlWebpackPlugin({
     template: './src/index.html', // 指定使用的模板文件
     filename: 'index.html', // 指定生成的文件名称(存在于内存中)
 })
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 module.exports = {
     mode: 'development',
     entry: path.join(__dirname, './src/index.js'),
@@ -11,7 +12,10 @@ module.exports = {
         path: path.join(__dirname, './dist'), // 输出目录
         filename: 'bundle.js',
     },
-    plugins: [htmlPlugin],
+    plugins: [
+        htmlPlugin,
+        new VueLoaderPlugin(),
+    ],
     module: {
         rules: [
             {
@@ -38,6 +42,10 @@ module.exports = {
                 test: /\.js$/,
                 use: ['babel-loader'],
                 exclude: /node_modules/
+            },
+            {
+                test: /\.vue$/,
+                use: ['vue-loader']
             },
         ]
     },

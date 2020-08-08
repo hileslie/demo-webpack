@@ -1,5 +1,21 @@
 import './css/index.css'
 import './css/index.less'
+import App from './components/App.vue'
+
+function test() {
+    console.log('hi leslie~')
+}
+test()
+
+class Person {
+    constructor() {
+        this.name = 'leslie'
+    }
+    static info = 'xxx'
+}
+console.log(Person.name)
+console.log(Person.info)
+
 // import './css/index.scss'
 // import Vue from 'vue';
 // new Vue({
@@ -18,16 +34,3 @@ import './css/index.less'
 //         }
 //     }
 // })
-function test() {
-    console.log('hi leslie~')
-}
-test()
-
-class Person {
-    constructor() {
-        this.name = 'leslie'
-    }
-    static info = 'xxx'
-}
-console.log(Person.name)
-console.log(Person.info)
