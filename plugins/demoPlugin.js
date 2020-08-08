@@ -28,7 +28,9 @@ class DemoPlugin {
             // 获取编译完成 文件名
             const assets = compilation.toJson().assets.map(asset => asset.name);
             console.log('assets文件名: ', assets);
-            console.log('this.options: ', this.options)
+        })
+
+        compiler.plugin('emit', compilation => {
         })
     }
 }
